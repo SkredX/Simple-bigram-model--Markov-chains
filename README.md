@@ -17,7 +17,6 @@ $$
 
 This means if we want to predict what comes after "Apple," we look *only* at "Apple," ignoring the 50 words written before it.
 
----
 
 ## 2. How a Bigram Model is Built
 
@@ -49,9 +48,8 @@ We count how often word B follows word A and convert that into a percentage.
 | **like** | coffee | **50%** | "coffee" follows "like" 1 out of 2 times. |
 | **tea** | . (End) | **100%** | End follows "tea" 1 out of 1 time. |
 
----
 
-## 3. Generating Text (The "Random Walk")
+## 3. Generating Text
 Once the model is trained, generating text is simply a "random walk" through the states.
 
 1.  **Start:** The model looks for words that start a sentence. In our data, it is always **"I"**.
@@ -63,8 +61,6 @@ Once the model is trained, generating text is simply a "random walk" through the
 **Result:** "I like tea."
 
 If we ran it again and the coin flip was different, we might generate "I like coffee."
-
----
 
 ## 4. Limitations
 While Bigram models are efficient, they lack **context**. Because they only look one word back, they often produce sentences that are grammatically correct locally but nonsensical globally.
